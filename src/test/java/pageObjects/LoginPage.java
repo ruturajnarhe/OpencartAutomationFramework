@@ -20,12 +20,15 @@ public class LoginPage extends BasePage {
 	WebElement loginbtn;
 	
 	public void setEmail(String email) {
+		waitForVisibility(emailAddress);
 		emailAddress.sendKeys(email);
 	}
 	public void setPassword(String pwd) {
+		waitForVisibility(password);
 		password.sendKeys(pwd);
 	}
 	public void clickLogin() {
+		waitForClickable(loginbtn);
 		loginbtn.click();
 	}
 	

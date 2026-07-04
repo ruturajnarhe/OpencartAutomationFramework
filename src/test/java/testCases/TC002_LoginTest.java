@@ -10,34 +10,50 @@ import testBase.BaseClass;
 
 public class TC002_LoginTest extends BaseClass {
 
-	@Test(groups= {"Sanity","Master"})
-	public void verify_login() {
-		
-		logger.info("*** Starting TC002_LoginTest ***");
-		
-		try {
-			// HomePage
-			HomePage homePage = new HomePage(driver);
-			homePage.clickMyAccount();
-			homePage.clickLogin();
-			
-			// Login
-			LoginPage loginPage = new LoginPage(driver);
-			loginPage.setEmail(properties.getProperty("email"));
-			loginPage.setPassword(properties.getProperty("password"));
-			loginPage.clickLogin();
-			
-			
-			// MyAccount
-			MyAccountPage myAcc = new MyAccountPage(driver);
-			boolean targetPage = myAcc.isMyAccoutPageExists();
-			
-			Assert.assertTrue(targetPage); 
-			// Assert.assertEquals(targetPage, true, "Login Failed");
-		} catch(Exception e) {
-			Assert.fail();
-		}
-		logger.info("*** Finishing TC002_LoginTest ***");
-	}
-	
+    @Test(groups = {"Sanity", "Master"})
+    public void verify_login() {
+
+        logger.info("***** Starting TC002_LoginTest *****");
+
+        try {
+
+            // Home Page
+            HomePage homePage = new HomePage(driver);
+
+            logger.info("Clicking on My Account");
+            homePage.clickMyAccount();
+
+            logger.info("Clicking on Login");
+            homePage.clickLogin();
+
+            // Login Page
+            LoginPage loginPage = new LoginPage(driver);
+
+            logger.info("Entering email");
+            loginPage.setEmail(properties.getProperty("email"));
+
+            logger.info("Entering password");
+            loginPage.setPassword(properties.getProperty("password"));
+
+            logger.info("Clicking on Login button");
+            loginPage.clickLogin();
+
+            // My Account Page
+            MyAccountPage myAcc = new MyAccountPage(driver);
+
+            logger.info("Verifying My Account page");
+            boolean targetPage = myAcc.isMyAccountPageExists();
+
+            Assert.assertTrue(targetPage, "Login Failed");
+
+            logger.info("Login Test Passed");
+
+        } catch (Exception e) {
+
+            logger.error("Test case failed : " + e.getMessage());
+            Assert.fail();
+        }
+
+        logger.info("***** Finishing TC002_LoginTest *****");
+    }
 }

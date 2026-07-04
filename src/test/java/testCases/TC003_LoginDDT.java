@@ -32,7 +32,7 @@ public class TC003_LoginDDT extends BaseClass{
 			
 			// MyAccount 
 			MyAccountPage myAcc = new MyAccountPage(driver);
-			boolean targetPage = myAcc.isMyAccoutPageExists();
+			boolean targetPage = myAcc.isMyAccountPageExists();
 			
 			
 			/* Data is Valid - login success - test pass - logout

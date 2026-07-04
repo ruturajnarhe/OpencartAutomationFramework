@@ -3,6 +3,7 @@ package testBase;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
@@ -12,10 +13,15 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.OutputType;
+//import org.openqa.selenium.Platform;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
+//import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -37,11 +43,83 @@ public class BaseClass {
 		
 		logger = LogManager.getLogger(this.getClass()); //log4j2
 		
-		switch(br.toLowerCase()) {
-			case "chrome" : driver = new ChromeDriver(); break;
-			case "edge" : driver = new EdgeDriver(); break;
-			default : System.out.println("Invalid browser"); return;
-		}
+		// Remote Execution
+        if (properties.getProperty("execution_env").equalsIgnoreCase("remote")) {
+
+            // Chrome Browser
+            if (br.equalsIgnoreCase("chrome")) {
+
+                ChromeOptions options = new ChromeOptions();
+
+                // OS
+                if (os.equalsIgnoreCase("windows")) {
+                    options.setPlatformName("Windows");
+                } 
+                else if (os.equalsIgnoreCase("mac")) {
+                    options.setPlatformName("macOS");
+                } 
+                else {
+                    System.out.println("No matching OS");
+                    return;
+                }
+
+                driver = new RemoteWebDriver(
+                        new URL("http://localhost:4444"),
+                        options);
+            }
+
+            // Edge Browser
+            else if (br.equalsIgnoreCase("edge")) {
+
+                EdgeOptions options = new EdgeOptions();
+
+                // OS
+                if (os.equalsIgnoreCase("windows")) {
+                    options.setPlatformName("Windows");
+                } 
+                else if (os.equalsIgnoreCase("mac")) {
+                    options.setPlatformName("macOS");
+                } 
+                else {
+                    System.out.println("No matching OS");
+                    return;
+                }
+
+                driver = new RemoteWebDriver(
+                        new URL("http://localhost:4444"),
+                        options);
+            }
+
+            else {
+                System.out.println("No matching browser");
+                return;
+            }
+        }
+
+        // Local Execution
+        else if (properties.getProperty("execution_env").equalsIgnoreCase("local")) {
+
+            switch (br.toLowerCase()) {
+
+                case "chrome":
+                    driver = new ChromeDriver();
+                    break;
+
+                case "edge":
+                    driver = new EdgeDriver();
+                    break;
+
+                default:
+                    System.out.println("Invalid browser");
+                    return;
+            }
+        }
+
+        else {
+            System.out.println("Invalid execution environment");
+            return;
+        }
+		
 		
 		
 		driver.manage().deleteAllCookies();
