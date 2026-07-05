@@ -22,6 +22,14 @@ public class ProductPage extends BasePage {
 	// Product Comparison link
 	@FindBy(xpath = "//a[normalize-space()='product comparison']")
 	WebElement comparisonLink;
+	
+	// Add to cart button
+	@FindBy(xpath="//button[@id='button-cart']")
+	WebElement addToCartButton ;
+	
+	// Shopping Cart link
+	@FindBy(xpath="//a[normalize-space()='shopping cart']")
+	WebElement shoppingCartLink ;
 
 	// Click Compare Product
 	public void clickCompareProduct() {
@@ -72,5 +80,16 @@ public class ProductPage extends BasePage {
 	public void clickComparisonLink() {
 		waitForClickable(comparisonLink);
 		comparisonLink.click();
+	}
+	
+	// Click add to cart button
+	public void clickAddToCart() {
+		waitForClickable(addToCartButton);
+		addToCartButton.click();
+	}
+	
+	public void clickShoppingCartLink() {
+		waitForClickable(shoppingCartLink);
+		shoppingCartLink.click();
 	}
 }

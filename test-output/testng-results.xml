@@ -2,18 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-07-04T22:59:06 IST" name="Suite" finished-at="2026-07-04T22:59:14 IST" duration-ms="8055">
+  <suite started-at="2026-07-05T15:24:13 IST" name="Suite" finished-at="2026-07-05T15:24:33 IST" duration-ms="19851">
     <groups>
-      <group name="Master">
-        <method signature="TC006_CompareProductTest.verify_ProductComparison()[pri:0, instance:testCases.TC006_CompareProductTest@696f0212]" name="verify_ProductComparison" class="testCases.TC006_CompareProductTest"/>
-      </group> <!-- Master -->
-      <group name="Regression">
-        <method signature="TC006_CompareProductTest.verify_ProductComparison()[pri:0, instance:testCases.TC006_CompareProductTest@696f0212]" name="verify_ProductComparison" class="testCases.TC006_CompareProductTest"/>
-      </group> <!-- Regression -->
     </groups>
-    <test started-at="2026-07-04T22:59:06 IST" name="Test" finished-at="2026-07-04T22:59:14 IST" duration-ms="8055">
-      <class name="testCases.TC006_CompareProductTest">
-        <test-method is-config="true" signature="setup(java.lang.String,java.lang.String)[pri:0, instance:testCases.TC006_CompareProductTest@696f0212]" started-at="2026-07-04T22:59:07 IST" name="setup" finished-at="2026-07-04T22:59:10 IST" duration-ms="3445" status="PASS">
+    <test started-at="2026-07-05T15:24:13 IST" name="Test" finished-at="2026-07-05T15:24:33 IST" duration-ms="19851">
+      <class name="testCases.TC007_AddToCartTest">
+        <test-method is-config="true" signature="setup(java.lang.String,java.lang.String)[pri:0, instance:testCases.TC007_AddToCartTest@1c3146bc]" started-at="2026-07-05T15:24:13 IST" name="setup" finished-at="2026-07-05T15:24:28 IST" duration-ms="14723" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -29,15 +23,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verify_ProductComparison()[pri:0, instance:testCases.TC006_CompareProductTest@696f0212]" started-at="2026-07-04T22:59:10 IST" name="verify_ProductComparison" finished-at="2026-07-04T22:59:14 IST" duration-ms="3885" status="PASS">
+        <test-method signature="verify_addToCart()[pri:0, instance:testCases.TC007_AddToCartTest@1c3146bc]" started-at="2026-07-05T15:24:28 IST" name="verify_addToCart" finished-at="2026-07-05T15:24:32 IST" duration-ms="4246" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verify_ProductComparison -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC006_CompareProductTest@696f0212]" started-at="2026-07-04T22:59:14 IST" name="tearDown" finished-at="2026-07-04T22:59:14 IST" duration-ms="300" status="PASS">
+        </test-method> <!-- verify_addToCart -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC007_AddToCartTest@1c3146bc]" started-at="2026-07-05T15:24:32 IST" name="tearDown" finished-at="2026-07-05T15:24:33 IST" duration-ms="367" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- testCases.TC006_CompareProductTest -->
+      </class> <!-- testCases.TC007_AddToCartTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

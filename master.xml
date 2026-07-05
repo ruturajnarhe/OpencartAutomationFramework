@@ -17,7 +17,8 @@
    	  <!-- <class name="testCases.TC003_LoginDDT"/> -->
      <!-- <class name="testCases.TC004_LogoutTest"/> -->
       <!-- <class name="testCases.TC005_SearchFunctionalityTest"/> -->
-      <class name="testCases.TC006_CompareProductTest"/> 
+      <!-- <class name="testCases.TC006_CompareProductTest"/> -->
+      <class name="testCases.TC007_AddToCartTest"/> 
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
