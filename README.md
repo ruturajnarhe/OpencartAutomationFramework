@@ -187,6 +187,7 @@ Log4j2 is used to generate execution logs, making debugging easier.
 * Search Product
 * Product Comparison
 * Add to Cart
+* Wish List
 * Logout
 
 ---
