@@ -28,8 +28,8 @@ public class ShoppingCartPage extends BasePage {
         }
 	}
 	
-	// Get Compared Product Name
-    public String getComparedProductName() {
+	// Get Shopping cart Product Name
+    public String getShoppingCartProductName() {
         waitForVisibility(productName);
         return productName.getText();
     }

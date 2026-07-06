@@ -30,6 +30,14 @@ public class ProductPage extends BasePage {
 	// Shopping Cart link
 	@FindBy(xpath="//a[normalize-space()='shopping cart']")
 	WebElement shoppingCartLink ;
+	
+	// Wish List button
+	@FindBy(xpath="//div[@id='product-product']//div[@class='btn-group']//button[1]")
+	WebElement wishListButton ;
+	
+	// Wish List link
+	@FindBy(xpath="//a[normalize-space()='wish list']")
+	WebElement wishListLink ;
 
 	// Click Compare Product
 	public void clickCompareProduct() {
@@ -88,8 +96,24 @@ public class ProductPage extends BasePage {
 		addToCartButton.click();
 	}
 	
+	// Click on Shopping cart link 
 	public void clickShoppingCartLink() {
 		waitForClickable(shoppingCartLink);
 		shoppingCartLink.click();
 	}
+	
+	// Click on Wish List button
+	public void clickWishListButton() {
+		waitForClickable(wishListButton);
+		wishListButton.click();
+	}
+	
+	// Click on Wish List Link 
+	public void clickWishListLink() {
+		waitForClickable(wishListLink);
+		wishListLink.click();
+	}
+	
+	
+	
 }

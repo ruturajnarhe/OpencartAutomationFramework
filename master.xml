@@ -15,10 +15,11 @@
       <!-- <class name="testCases.TC001_AccountRegistrationTest"/> -->
       <!-- <class name="testCases.TC002_LoginTest"/> -->
    	  <!-- <class name="testCases.TC003_LoginDDT"/> -->
-     <!-- <class name="testCases.TC004_LogoutTest"/> -->
+      <!-- <class name="testCases.TC004_LogoutTest"/> -->
       <!-- <class name="testCases.TC005_SearchFunctionalityTest"/> -->
       <!-- <class name="testCases.TC006_CompareProductTest"/> -->
-      <class name="testCases.TC007_AddToCartTest"/> 
+      <!-- <class name="testCases.TC007_AddToCartTest"/> -->
+      <class name="testCases.TC008_WishListTest"/> 
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

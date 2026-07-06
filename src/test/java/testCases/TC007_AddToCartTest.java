@@ -45,13 +45,13 @@ public class TC007_AddToCartTest extends BaseClass {
 		logger.info("Navigating to Shopping Cart page");
 		productPage.clickShoppingCartLink();
 
-		// ER-2 : Verify Comparison Page
+		// ER-2 : Verify Shopping Cart Page
 		Assert.assertTrue(shoppingCartPage.isShoppingCartPageExists(), "Product Shopping Cart page is not displayed");
 
 		logger.info("Shopping Cart page displayed successfully");
 
 		// Verify Correct Product
-		String actualProduct = shoppingCartPage.getComparedProductName();
+		String actualProduct = shoppingCartPage.getShoppingCartProductName();
 
 		Assert.assertEquals(actualProduct, productName, "Incorrect product displayed in Shopping cart page");
 
